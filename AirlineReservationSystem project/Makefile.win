@@ -1,0 +1,58 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = src/DomesticFlight.o src/Flight.o src/main.o src/InternationalFlight.o src/CharterFlight.o src/Passenger.o src/EconomyPassenger.o src/BusinessPassenger.o src/FirstClassPassenger.o src/Ticket.o src/Airline.o
+LINKOBJ  = src/DomesticFlight.o src/Flight.o src/main.o src/InternationalFlight.o src/CharterFlight.o src/Passenger.o src/EconomyPassenger.o src/BusinessPassenger.o src/FirstClassPassenger.o src/Ticket.o src/Airline.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = AirlineReservationSystem.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/DomesticFlight.o: src/DomesticFlight.cpp
+	$(CPP) -c src/DomesticFlight.cpp -o src/DomesticFlight.o $(CXXFLAGS)
+
+src/Flight.o: src/Flight.cpp
+	$(CPP) -c src/Flight.cpp -o src/Flight.o $(CXXFLAGS)
+
+src/main.o: src/main.cpp
+	$(CPP) -c src/main.cpp -o src/main.o $(CXXFLAGS)
+
+src/InternationalFlight.o: src/InternationalFlight.cpp
+	$(CPP) -c src/InternationalFlight.cpp -o src/InternationalFlight.o $(CXXFLAGS)
+
+src/CharterFlight.o: src/CharterFlight.cpp
+	$(CPP) -c src/CharterFlight.cpp -o src/CharterFlight.o $(CXXFLAGS)
+
+src/Passenger.o: src/Passenger.cpp
+	$(CPP) -c src/Passenger.cpp -o src/Passenger.o $(CXXFLAGS)
+
+src/EconomyPassenger.o: src/EconomyPassenger.cpp
+	$(CPP) -c src/EconomyPassenger.cpp -o src/EconomyPassenger.o $(CXXFLAGS)
+
+src/BusinessPassenger.o: src/BusinessPassenger.cpp
+	$(CPP) -c src/BusinessPassenger.cpp -o src/BusinessPassenger.o $(CXXFLAGS)
+
+src/FirstClassPassenger.o: src/FirstClassPassenger.cpp
+	$(CPP) -c src/FirstClassPassenger.cpp -o src/FirstClassPassenger.o $(CXXFLAGS)
+
+src/Ticket.o: src/Ticket.cpp
+	$(CPP) -c src/Ticket.cpp -o src/Ticket.o $(CXXFLAGS)
+
+src/Airline.o: src/Airline.cpp
+	$(CPP) -c src/Airline.cpp -o src/Airline.o $(CXXFLAGS)
