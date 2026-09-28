@@ -8,7 +8,7 @@ struct student
 	int roll_no;
 	int marks;
 	//member function
-	student displayStudentInfo()
+	void displayStudentInfo()
 	{
 		cout<<"Name: "<<first_name<<" "<<last_name<<endl;
 		cout<<"Marks: "<<marks;
